@@ -11,10 +11,9 @@ public:
     
     void rotate(vector<int>& nums, int k){
         k=k%nums.size();
-        rev(nums,0,nums.size()-1);
-        rev(nums,0,k-1);
+        // Since done rotate array to left so the Q is of right 
+        rev(nums,0,nums.size()-1);// So rotate it to right  
+        rev(nums,0,k-1); // apply now same logic for did in left 
         rev(nums,k,nums.size()-1);
     }
-
-
 };
