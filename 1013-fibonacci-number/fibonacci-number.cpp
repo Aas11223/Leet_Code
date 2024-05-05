@@ -9,13 +9,17 @@ public:
     }
 
     int fibhelper(int n, int dp[]){
+        // if(n==0 || n==1) return n;
+
+        // if(dp[n] != -1) return dp[n];
+
+        // int a=fibhelper(n-1,dp);
+        // int b=fibhelper(n-2,dp);
+        // dp[n]=a+b;
+        // return a+b;
         if(n==0 || n==1) return n;
-
-        if(dp[n] != -1) return dp[n];
-
-        int a=fibhelper(n-1,dp);
-        int b=fibhelper(n-2,dp);
-        dp[n]=a+b;
-        return a+b;
+        if(dp[n]!=-1) return dp[n];
+        dp[n]=fibhelper(n-1,dp)+fibhelper(n-2,dp);
+        return fibhelper(n-1,dp)+fibhelper(n-2,dp);
     }
 };
