@@ -13,7 +13,7 @@ public:
         unordered_map<int, int> countMap;
         int majorityCount = nums.size() / 2;
 
-        for (int num : nums) {
+        for (int num: nums) {
             countMap[num]++;
             if (countMap[num] > majorityCount) {
                 return num;
