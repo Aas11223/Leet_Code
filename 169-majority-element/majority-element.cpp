@@ -10,12 +10,12 @@ public:
     //    } 
     //    return -1;
 
-        unordered_map<int, int> countMap;
+        unordered_map<int, int> count;
         int majorityCount = nums.size() / 2;
 
         for (int num: nums) {
-            countMap[num]++;
-            if (countMap[num] > majorityCount) {
+            count[num]++;
+            if (count[num] > majorityCount) {
                 return num;
             }
         }
