@@ -1,21 +1,5 @@
 class Solution {
 public:
-    //vector<vector<int>> ans;
-    // void helper(vector<int>& candidates, int target, int tempAns, int index){
-    //     if(index==candidates.size()){
-    //         if(tempAns==target){
-    //             ans.push_back(candidates[index]);
-    //             return;
-    //         }
-    //     }
-    //     //inclusion
-    //     tempAns=candidates[index]+tempAns;
-    //     //tempAns.push_back(candidates)
-    //     helper(candidates,target,tempAns,index);
-    //     tempAns=candidates[index]-tempAns;
-    //     //exclusion
-    //     helper(candidates,target,tempAns,index+1);
-    // }
     vector<vector<int>> ans;
     void helper(vector<int>& candidates, int target,int i,int currSum, vector<int> temp){
         if(currSum>target) return; //bounding condition
