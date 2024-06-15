@@ -7,8 +7,8 @@ public:
             int sum=0;
             for(int j=0;j<wall[i].size()-1;j++){
                 sum+=wall[i][j];
-                m[sum]++;
-                ans=max(ans,m[sum]);
+                //m[sum]++;
+                ans=max(ans,++m[sum]);
             }
         } 
         return wall.size()-ans;
