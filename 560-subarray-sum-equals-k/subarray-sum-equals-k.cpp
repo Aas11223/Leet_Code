@@ -1,48 +1,25 @@
 class Solution {
 public:
     int subarraySum(std::vector<int>& nums, int k) {
-        // int count = 0;
-        // int sum = 0;
-        // for (int i = 0; i < nums.size(); i++) {
-        //     sum = 0;
-        //     // Consider each subarray starting from index i
-        //     for (int j = i; j < nums.size();j++) {
-        //         sum += nums[j];
-        //         // If the sum equals k, increment count
-        //         if (sum == k)
-        //             count++;
+        // int count=0;
+        // for(int i=0;i<nums.size();i++){
+        //     int sum=0;
+        //     for(int j=i;j<nums.size();j++){
+        //         sum+=nums[j];
+        //         if(sum==k) count++;
         //     }
         // }
-        
         // return count;
-        int count=0;
+        unordered_map<int,int> m;
+        int ans=0;
+        int sum=0;
+        m[sum]++;
         for(int i=0;i<nums.size();i++){
-            int sum=0;
-            for(int j=i;j<nums.size();j++){
-                sum+=nums[j];
-                if(sum==k) count++;
-            }
+            sum+=nums[i];
+            int find=sum-k;
+            if(m.find(find) != m.end()) ans+=m[find];
+            m[sum]++;
         }
-        return count;
+        return ans;
     }
-    // int count=0;
-    // int sum=0;
-
-    // for(int i=0;i<nums.size();i++){
-    //     if(nums[i]==k){
-    //         count=1;
-    //         sum=1;
-    //     }else{
-    //         sum=0;
-    //     }
-    // }
-
-    // for(int i=0;i<nums.size();i++){
-    //     if(nums[i]+nums[i+1]==k){
-    //         count++;
-    //         sum++;
-    //     }
-    // }
-    // return count;
-    // }
 };
