@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool canShipWithinDays(const std::vector<int>& weights, int days, int capacity) {
+    bool canShipWithinDays(vector<int>& weights, int days, int capacity) {
         int currentLoad = 0;
         int daysNeeded = 1;
 
@@ -15,7 +15,7 @@ public:
         return daysNeeded <= days;
     }
 
-    int shipWithinDays(std::vector<int>& weights, int days) {
+    int shipWithinDays(vector<int>& weights, int days) {
         // Calculate the maximum element manually
         int left = weights[0];
         for (int weight : weights) {
