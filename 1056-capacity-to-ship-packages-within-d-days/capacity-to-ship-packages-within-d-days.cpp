@@ -1,3 +1,7 @@
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
 class Solution {
 public:
     bool canShipWithinDays(const std::vector<int>& weights, int days, int capacity) {
@@ -16,8 +20,19 @@ public:
     }
 
     int shipWithinDays(std::vector<int>& weights, int days) {
-        int left = *std::max_element(weights.begin(), weights.end());
-        int right = std::accumulate(weights.begin(), weights.end(), 0);
+        // Calculate the maximum element manually
+        int left = weights[0];
+        for (int weight : weights) {
+            if (weight > left) {
+                left = weight;
+            }
+        }
+
+        // Calculate the sum of elements manually
+        int right = 0;
+        for (int weight : weights) {
+            right += weight;
+        }
 
         while (left < right) {
             int mid = left + (right - left) / 2;
