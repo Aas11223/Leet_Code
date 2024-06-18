@@ -1,10 +1,6 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        // for(int i=0;i<nums.size();i++){
-        //     if(target==nums[i]) return i;
-        // }
-        // return -1;
         int left = 0;
         int right = nums.size() - 1;
         
@@ -14,7 +10,6 @@ public:
             if (nums[mid] == target) {
                 return mid;
             }
-            
             // Determine which side is properly sorted
             if (nums[left] <= nums[mid]) {
                 // Left side is sorted
