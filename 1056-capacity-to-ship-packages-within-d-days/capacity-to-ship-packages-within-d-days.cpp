@@ -1,44 +1,36 @@
 class Solution {
 public:
     bool canShipWithinDays(vector<int>& weights, int days, int capacity) {
-        int currentLoad = 0;
-        int daysNeeded = 1;
-
-        for (int weight : weights) {
-            if (currentLoad + weight > capacity) {
+        int load=0;
+        int daysNeeded=1;
+        for(int i=0;i<weights.size();i++){
+            if(load+weights[i]>capacity){
                 daysNeeded++;
-                currentLoad = 0;
+                load=0;
             }
-            currentLoad += weight;
+            load+=weights[i];
         }
-
-        return daysNeeded <= days;
+        return daysNeeded<=days;
     }
 
     int shipWithinDays(vector<int>& weights, int days) {
-        // Calculate the maximum element manually
-        int left = weights[0];
-        for (int weight : weights) {
-            if (weight > left) {
-                left = weight;
-            }
+        int left=weights[0];
+        for(int i=0;i<weights.size();i++){
+            left=max(left,weights[i]);
         }
-
-        // Calculate the sum of elements manually
-        int right = 0;
-        for (int weight : weights) {
-            right += weight;
+        int right=0;
+        for(int i=0;i<weights.size();i++){
+            right+=weights[i];
         }
-
-        while (left < right) {
-            int mid = left + (right - left) / 2;
+        while(left<right){
+            int mid=left+(right - left)/2;
             if (canShipWithinDays(weights, days, mid)) {
                 right = mid;
-            } else {
+            } 
+            else {
                 left = mid + 1;
             }
         }
-
-        return left;
+        return left; 
     }
 };
