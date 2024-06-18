@@ -1,7 +1,3 @@
-#include <vector>
-#include <algorithm>
-#include <numeric>
-
 class Solution {
 public:
     bool canShipWithinDays(const std::vector<int>& weights, int days, int capacity) {
