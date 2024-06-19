@@ -12,6 +12,7 @@ class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
         //Itterative approach
+
         // if(head==NULL || head->next==NULL) return head;
         // ListNode* curr=head;
         // ListNode* prev=NULL;
@@ -25,6 +26,7 @@ public:
         // return prev;
 
         //Recursive approach
+        
         if(head==NULL || head->next==NULL) return head;
         ListNode* rest=reverseList(head->next);
         head->next->next=head;
