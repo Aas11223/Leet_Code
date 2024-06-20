@@ -1,36 +1,21 @@
-#include <vector>
-#include <unordered_map>
-#include <stack>
-
-using namespace std;
-
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-        unordered_map<int, int> nextGreater;
-        stack<int> st;
-
-        // Fill the nextGreater map
-        for (int num : nums2) {
-            while (!st.empty() && st.top() < num) {
-                nextGreater[st.top()] = num;
-                st.pop();
-            }
-            st.push(num);
-        }
-
-        // For elements that have no next greater element
-        while (!st.empty()) {
-            nextGreater[st.top()] = -1;
-            st.pop();
-        }
-
-        // Prepare the answer for nums1
-        vector<int> ans;
-        for (int num : nums1) {
-            ans.push_back(nextGreater[num]);
-        }
-
-        return ans;
+       vector<int> ans(nums1.size());
+       bool found=false;
+       for(int i=0;i<nums1.size();i++){
+        found=false;
+           for(int j=0;j<nums2.size();j++){
+               if(nums1[i]==nums2[j]) found =true;
+               if(found && nums2[j]>nums1[i]){
+                ans[i]=nums2[j];
+                break;
+               }
+           }
+       }
+       for(int i=0;i<ans.size();i++){
+        if(ans[i]==0) ans[i]=-1;
+       }
+       return ans;
     }
 };
