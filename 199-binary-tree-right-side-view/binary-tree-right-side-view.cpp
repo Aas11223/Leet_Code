@@ -12,7 +12,7 @@
 class Solution {
 public:
     void helper(TreeNode* node, vector<int>& ans, int level) {
-        if (node == nullptr) return;
+        if (node == NULL) return;
         if (level == ans.size()) ans.push_back(node->val);
         helper(node->right, ans, level + 1);
         helper(node->left, ans, level + 1);
