@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    TreeNode* helper(vector<int>& preorder, unordered_map<int, int>& inorder_map, int& preorder_index, int inorder_left, int inorder_right) {
+   TreeNode* helper(vector<int>& preorder, unordered_map<int, int>& inorder_map, int& preorder_index, int inorder_left, int inorder_right) {
         if (inorder_left > inorder_right) {
             return nullptr;
         }
@@ -31,3 +31,4 @@ public:
         return helper(preorder, inorder_map, preorder_index, 0, inorder.size() - 1);
     }
 };
+
