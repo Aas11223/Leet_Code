@@ -30,10 +30,7 @@ void helper(vector<int>& candidates, int target,int index,vector<vector<int>>& a
     if(target<0) return;
     for(int i=index;i<candidates.size();i++){
         if(candidates[i]>target) break;
-        if(i>index && candidates[i]==candidates[i-1]) continue; // If commented Output
-//[[1,1,6],[1,2,5],[1,7],[1,2,5],[1,7],[2,6]]
-//Expected
-//[[1,1,6],[1,2,5],[1,7],[2,6]]
+        if(i>index && candidates[i]==candidates[i-1]) continue;
         curr.push_back(candidates[i]);
         helper(candidates,target-candidates[i],i+1,ans,curr);
         curr.pop_back();
