@@ -13,13 +13,10 @@ public:
     ListNode* middleNode(ListNode* head) {
         ListNode* slow=head;
         ListNode* fast=head;
-       // ListNode* ans;
         while(fast !=NULL && fast->next != NULL){
             slow=slow->next;
             fast=fast->next->next;
         }
-        // ans.push_back(slow->val);
-        // if(slow->next != NULL) ans.push_back(slow->val);
         return slow;
     }
 };
