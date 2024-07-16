@@ -13,13 +13,16 @@ public:
         unordered_map<int, int> count;
         int majorityCount = nums.size() / 2;
 
-        for (int i: nums) {
-            count[i]++;
-            if (count[i] > majorityCount) {
-                return i;
-            }
+        // for (int i: nums) {
+        //     count[i]++;
+        //     if (count[i] > majorityCount) {
+        //         return i;
+        //     }
+        // }
+        for(int i=0;i<nums.size();i++){
+            count[nums[i]]++;
+            if(count[nums[i]]>majorityCount) return nums[i];
         }
-
         // In case there is no majority element which is theoretically impossible
         // for this problem since we are guaranteed that a majority element always exists.
         return -1;
