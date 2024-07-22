@@ -10,17 +10,6 @@ public:
         //     }
         // }
         // return maxi;
-        // double ans=0;
-        // double window=0;
-        // for(int i=0;i<k;i++){
-        //     window+=nums[i];
-        // }
-        // ans=window/k;
-        // for(int right=k;right<nums.size();right++){
-        //     window+=nums[right]-nums[right-k];
-        //     ans=max(ans,window/k);
-        // }
-        // return ans;
         double ans=0;
         double window=0;
         for(int i=0;i<k;i++){
