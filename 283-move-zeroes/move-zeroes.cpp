@@ -13,7 +13,7 @@ public:
         int lastNonZero=0;
         for(int i=0;i<nums.size();i++){
             if(nums[i]!=0){
-                if(i!=lastNonZero) swap(nums[i],nums[lastNonZero]);
+                swap(nums[i],nums[lastNonZero]);
                 lastNonZero++;
             }
             
