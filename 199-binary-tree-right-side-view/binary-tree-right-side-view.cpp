@@ -22,7 +22,6 @@ public:
         //Thus, to cover all cases, we need to process both subtrees.
         helper(node->left, ans, level + 1);
     }
-    
     vector<int> rightSideView(TreeNode* root) {
         vector<int> ans;
         helper(root, ans, 0);
