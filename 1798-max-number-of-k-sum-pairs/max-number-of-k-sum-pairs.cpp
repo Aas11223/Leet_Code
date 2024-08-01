@@ -14,8 +14,6 @@ public:
             else{
                 if(nums[l]+nums[r]<k) l++;
                 else r--;
-                // l++;
-                // r--;
             }
         }
         return count;
